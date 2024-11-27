@@ -1,0 +1,31 @@
+.root {
+    -fx-alignment: center; /* Κεντράρισμα όλων των παιδιών */
+        -fx-background-color: linear-gradient(to bottom, #FDF6E3, #FFFFFF); /* Gradient από μπεζ σε λευκό */
+}
+
+#FirstIMG {
+    -fx-margin: 0 ; /* Κεντράρισμα της εικόνας */
+}
+
+.button {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00); /* Χρώμα κουμπιού */
+    -fx-text-fill: white;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-padding: 10 20;
+    -fx-border-color: #ffa07a;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: linear-gradient(#be1d00, #ff5400); /* Εφέ hover */
+    -fx-border-color: white;
+}
+
+.button:pressed {
+    -fx-background-color: linear-gradient(#d62828, #7d1d1d); /* Εφέ όταν πατιέται */
+    -fx-border-color: #ff7f50; /* Χρώμα περιγράμματος όταν πατιέται */
+}

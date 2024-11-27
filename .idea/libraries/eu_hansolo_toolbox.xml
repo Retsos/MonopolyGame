@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="eu.hansolo.toolbox" type="repository">
+    <properties maven-id="eu.hansolo:toolbox:17.0.57" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/eu/hansolo/toolbox/17.0.57/toolbox-17.0.57.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

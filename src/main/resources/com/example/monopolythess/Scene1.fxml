@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1600.0" stylesheets="@Scene1.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.monopolythess.example.SceneController">
+   <top>
+      <HBox alignment="BOTTOM_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label styleClass="title" stylesheets="@Scene1.css" text="Στοιχεία Παιχτών" textFill="#00ff09" underline="true">
+               <font>
+                  <Font size="32.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="10.0" />
+               </HBox.margin>
+            </Label>
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <BorderPane maxHeight="380.0" maxWidth="900.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="380.0" prefWidth="900.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+         <left>
+            <VBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="300.0" spacing="50.0" styleClass="player-box" stylesheets="@Scene1.css" BorderPane.alignment="TOP_CENTER">
+               <children>
+                  <Label contentDisplay="TOP" styleClass="player-tags" stylesheets="@Scene1.css" text="Παίκτης 1" textFill="#00ff09" VBox.vgrow="ALWAYS">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="player1name" alignment="CENTER" maxWidth="250.0" prefWidth="50.0" styleClass="text-field" stylesheets="@Scene1.css">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="ComboBox1" prefWidth="185.0" promptText="Επίλεξε Avatar " styleClass="combo-box" stylesheets="@Scene1.css" VBox.vgrow="ALWAYS" />
+               </children>
+            </VBox>
+         </left>
+         <right>
+            <VBox alignment="TOP_CENTER" prefHeight="380.0" prefWidth="300.0" spacing="50.0" styleClass="player-box" stylesheets="@Scene1.css" BorderPane.alignment="TOP_CENTER">
+               <BorderPane.margin>
+                  <Insets right="10.0" />
+               </BorderPane.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <children>
+                  <Label contentDisplay="TOP" styleClass="player-tags" stylesheets="@Scene1.css" text="Παίκτης 2" textFill="#00ff09">
+                     <font>
+                        <Font size="28.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="player2name" alignment="CENTER" maxWidth="250.0" prefWidth="50.0" styleClass="text-field" stylesheets="@Scene1.css">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+                  <ComboBox fx:id="ComboBox2" prefWidth="185.0" promptText="Επίλεξε Avatar " styleClass="combo-box" stylesheets="@Scene1.css" />
+               </children>
+            </VBox>
+         </right>
+      </BorderPane>
+   </center>
+   <bottom>
+      <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" spacing="450.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button alignment="BOTTOM_CENTER" layoutX="-50.0" mnemonicParsing="false" onAction="#Back" prefWidth="150.0" styleClass="button-back" stylesheets="@Scene1.css" text="Πίσω" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="StartBtn" mnemonicParsing="false" onAction="#SwitchToScene2" prefHeight="70.0" prefWidth="240.0" styleClass="start-button" stylesheets="@Scene1.css" text="Ξεκινάμε" textFill="#00ff09">
+               <font>
+                  <Font size="32.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <HBox.margin>
+                  <Insets left="45.0" />
+               </HBox.margin>
+            </Button>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </HBox>
+   </bottom>
+   <styleClass>
+      <String fx:value="root" />
+      <String fx:value="layout" />
+   </styleClass>
+</BorderPane>

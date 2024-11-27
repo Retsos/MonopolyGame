@@ -1,0 +1,127 @@
+/* ----- Κύριο Background για το Δεξί Τμήμα ----- */
+.root {
+    -fx-background-color: #FDF6E3; /* Απαλό μπεζ */
+    -fx-padding: 10px;
+}
+
+/* ----- Περιοχή Παικτών (Πάνω Δεξιά) ----- */
+.player-area {
+    -fx-background-color: #EAF7DF; /* Απαλό πράσινο */
+    -fx-background-radius: 10;
+    -fx-border-color: #B5CDA3; /* Απαλό σκούρο πράσινο */
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
+
+/* Περιοχές Λίστας (Όνομα Περιοχής, Στοιχεία) */
+.property-list {
+    -fx-background-color: white;
+    -fx-border-color: #B5CDA3;
+    -fx-border-width: 1px;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px;
+}
+
+/* ----- Κουμπιά (Γενικό Στυλ) ----- */
+.button {
+    -fx-background-color: #F0F0F0; /* Απαλό γκρι */
+    -fx-text-fill: black;
+    -fx-border-color: #B0B0B0; /* Απαλό περίγραμμα */
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 10px;
+    -fx-cursor: hand;
+}
+
+/* ----- Hover Effects ----- */
+.button:hover {
+    -fx-background-color: #E0E0E0; /* Λίγο πιο σκούρο γκρι */
+}
+
+/* ----- Pressed Effects ----- */
+.button:pressed {
+    -fx-background-color: #D0D0D0; /* Ακόμα πιο σκούρο γκρι */
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 2);
+}
+
+/* ----- Στυλ για Συγκεκριμένα Κουμπιά ----- */
+
+/* Παίξε (Πράσινο) */
+.btn-play {
+    -fx-background-color: #DFF2BF; /* Παστέλ πράσινο */
+    -fx-border-color: #A2C380;
+    -fx-font-size: 16;
+}
+.btn-play:hover {
+    -fx-background-color: #CDE3AB; /* Hover effect */
+}
+.btn-play:pressed {
+    -fx-background-color: #BBD48A; /* Pressed effect */
+}
+
+/* Τέλος Σειράς (Μπλε) */
+.btn-end-turn {
+    -fx-background-color: #D4EAF7; /* Παστέλ μπλε */
+    -fx-font-size: 16;
+    -fx-border-color: #94B7D0;
+}
+.btn-end-turn:hover {
+    -fx-background-color: #C3DCEB;
+}
+.btn-end-turn:pressed {
+    -fx-background-color: #B2CDDF;
+}
+
+/* Τέλος Παιχνιδιού (Κόκκινο) */
+.btn-end-game {
+    -fx-background-color: #F7D4D4; /* Παστέλ κόκκινο */
+    -fx-font-size: 16;
+    -fx-border-color: #D09E9E;
+}
+.btn-end-game:hover {
+    -fx-background-color: #F3BABA;
+}
+.btn-end-game:pressed {
+    -fx-background-color: #E79999;
+}
+
+/* ----- Κεντρική Περιοχή (Αγορές) ----- */
+.central-area {
+    -fx-background-color: #F8F5E3; /* Πολύ ανοιχτό κρεμ */
+    -fx-border-color: #D6D2C4;
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 10px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
+.central-area-borderless {
+    -fx-background-color: #F8F5E3; /* Πολύ ανοιχτό κρεμ */
+    -fx-padding: 10px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+}
+
+/* Κουμπιά Ναι/Όχι/Πλήρωσε */
+.btn-action {
+    -fx-background-color: #F0F0F0;
+    -fx-border-color: #B0B0B0;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 8px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+.btn-action:hover {
+    -fx-background-color: #E0E0E0;
+}
+.btn-action:pressed {
+    -fx-background-color: #D0D0D0;
+}

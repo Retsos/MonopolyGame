@@ -1,0 +1,131 @@
+/* ----- Φόντο ----- */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #FDF6E3, #FFFFFF); /* Gradient */
+    -fx-padding: 20px;
+}
+
+/* ----- Τίτλος ----- */
+.title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+    -fx-alignment: center;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 2);
+}
+
+/* ----- Περιοχές Παικτών ----- */
+.player-box {
+    -fx-background-color: linear-gradient(to bottom, #FFFFFF, #EAF7DF); /* Λευκό σε απαλό πράσινο */
+    -fx-border-color: #B5CDA3; /* Πράσινο pastel */
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-spacing: 10px;
+}
+
+/* ----- Τμήμα Στατιστικών ----- */
+.stats-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 18px;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+}
+
+.final-stats-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 22px;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+}
+.name-show-label {
+    -fx-font-family: "Arial";
+    -fx-font-size: 22px;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+}
+
+/* ----- Μήνυμα Νικητή ----- */
+.winner-message {
+    -fx-font-family: "Arial";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94C380;
+    -fx-alignment: center;
+    -fx-padding: 20px;
+}
+
+/* ----- Κουμπί "Έξοδος" ----- */
+.exit-button {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00); /* Χρώμα κουμπιού */
+    -fx-text-fill: white; /* Χρώμα κειμένου */
+    -fx-font-family: "Arial"; /* Γραμματοσειρά */
+    -fx-font-size: 16px; /* Μέγεθος γραμματοσειράς */
+    -fx-padding: 10 20; /* Padding */
+    -fx-border-color: #ffa07a; /* Χρώμα περιγράμματος */
+    -fx-border-width: 2px; /* Πάχος περιγράμματος */
+    -fx-border-radius: 5px; /* Στρογγυλοποίηση περιγράμματος */
+    -fx-background-radius: 5px; /* Στρογγυλοποίηση κουμπιού */
+    -fx-cursor: hand; /* Αλλαγή του δείκτη όταν περνάει από πάνω */
+}
+
+.exit-button:hover {
+    -fx-background-color: linear-gradient(#be1d00, #ff5400); /* Εφέ hover */
+    -fx-border-color: white; /* Αλλαγή χρώματος περιγράμματος */
+}
+
+.exit-button:pressed {
+    -fx-background-color: linear-gradient(#d62828, #7d1d1d); /* Εφέ όταν πατιέται */
+    -fx-border-color: #ff7f50; /* Χρώμα περιγράμματος όταν πατιέται */
+}
+
+
+/* ----- Συνολικό Layout ----- */
+.layout {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+/* ----- ListView Στυλ ----- */
+.list-view {
+    -fx-background-color: #FFFFFF; /* Λευκό φόντο */
+    -fx-border-color: #B5CDA3; /* Pastel πράσινο */
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.1), 5, 0.0, 0, 2);
+}
+
+/* Στυλ για κάθε στοιχείο της λίστας */
+.list-cell {
+    -fx-background-color: transparent; /* Διάφανο φόντο για κάθε στοιχείο */
+    -fx-text-fill: #4A7C59; /* Σκούρο πράσινο για το κείμενο */
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-padding: 5px 10px;
+    -fx-border-color: transparent;
+}
+
+/* Hover Effect για στοιχεία της λίστας */
+.list-cell:hover {
+    -fx-background-color: #EAF7DF; /* Απαλό πράσινο */
+    -fx-text-fill: #2A5D37; /* Πιο σκούρο πράσινο */
+}
+
+/* Επιλεγμένο στοιχείο */
+.list-cell:selected {
+    -fx-background-color: #DFF2BF; /* Απαλό πράσινο */
+    -fx-text-fill: black; /* Μαύρο κείμενο */
+    -fx-border-color: #A2C380;
+    -fx-border-width: 1px;
+}
+
+/* ----- Τίτλος Λίστας ----- */
+.list-title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+    -fx-padding: 5px 0;
+    -fx-alignment: center;
+}

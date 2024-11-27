@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="1600.0" stylesheets="@Scene3.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.monopolythess.example.Scene3Controller">
+   <children>
+      <Label styleClass="title" stylesheets="@Scene3.css" text="Τέλος Παιχνιδιού" textFill="#00ff09" underline="true">
+         <font>
+            <Font size="32.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="30.0" />
+         </VBox.margin>
+      </Label>
+      <BorderPane prefHeight="607.0" prefWidth="1600.0" stylesheets="@Scene3.css">
+         <left>
+            <BorderPane maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="player-box" stylesheets="@Scene3.css" BorderPane.alignment="CENTER">
+               <top>
+                  <Label fx:id="Player1" alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="287.0" styleClass="name-show-label" text="Παίκτης :  Γιώργος" textFill="#00ff09" BorderPane.alignment="TOP_CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <bottom>
+                  <Label fx:id="Total1" alignment="TOP_CENTER" contentDisplay="TOP" maxWidth="321.0" prefHeight="30.0" prefWidth="321.0" styleClass="final-stats-label" text="Αξία Περιουσίας: 2500" textFill="#00ff09" BorderPane.alignment="TOP_CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </bottom>
+               <center>
+                  <TitledPane alignment="CENTER" collapsible="false" contentDisplay="TOP" prefHeight="300.0" prefWidth="300.0" styleClass="list-title" text="Αγορασμένες Περιοχές" textFill="#00ff09" wrapText="true" BorderPane.alignment="CENTER">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <bottom>
+                              <AnchorPane prefHeight="100.0" prefWidth="280.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="Houses1" layoutX="11.0" layoutY="50.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="179.0" styleClass="stats-label" text="Αξία Σπιτιών" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Hotels1" layoutX="11.0" layoutY="72.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="183.0" styleClass="stats-label" text="Αξία Ξενοδοχείων" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Money1" layoutX="11.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="172.0" styleClass="stats-label" text="Χρήματα" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Regions1" layoutX="11.0" layoutY="26.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="179.0" styleClass="stats-label" text="Αξία Περιοχών" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </bottom>
+                           <top>
+                              <ListView fx:id="Agores1" prefHeight="200.0" prefWidth="200.0" stylesheets="@Scene3.css" BorderPane.alignment="CENTER" />
+                           </top>
+                        </BorderPane>
+                     </content>
+                  </TitledPane>
+               </center>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </left>
+         <right>
+            <BorderPane maxHeight="400.0" maxWidth="300.0" prefHeight="400.0" prefWidth="300.0" styleClass="player-box" BorderPane.alignment="CENTER">
+               <top>
+                  <Label fx:id="Player2" alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" prefHeight="32.0" prefWidth="287.0" styleClass="name-show-label" text="Παίκτης :  Γιώργος" textFill="#00ff09" BorderPane.alignment="TOP_CENTER">
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </top>
+               <bottom>
+                  <Label fx:id="Total2" alignment="TOP_CENTER" contentDisplay="TOP" styleClass="final-stats-label" text="Αξία Περιουσίας" textFill="#00ff09" BorderPane.alignment="TOP_CENTER">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <BorderPane.margin>
+                        <Insets />
+                     </BorderPane.margin>
+                  </Label>
+               </bottom>
+               <center>
+                  <TitledPane alignment="CENTER" collapsible="false" contentDisplay="TOP" prefHeight="300.0" prefWidth="300.0" styleClass="list-title" text="Αγορασμένες Περιοχές" textFill="#00ff09" BorderPane.alignment="CENTER">
+                     <content>
+                        <BorderPane prefHeight="200.0" prefWidth="200.0">
+                           <bottom>
+                              <AnchorPane prefHeight="100.0" prefWidth="280.0" BorderPane.alignment="CENTER">
+                                 <children>
+                                    <Label fx:id="Money2" layoutX="11.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="172.0" styleClass="stats-label" text="Χρήματα" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Hotels2" layoutX="11.0" layoutY="73.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="183.0" styleClass="stats-label" text="Αξία Ξενοδοχείων" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Houses2" layoutX="11.0" layoutY="50.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="179.0" styleClass="stats-label" text="Αξία Σπιτιών" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                    <Label fx:id="Regions2" layoutX="11.0" layoutY="26.0" maxWidth="1.7976931348623157E308" prefHeight="18.0" prefWidth="179.0" styleClass="stats-label" text="Αξία Περιοχών" textFill="#00ff09">
+                                       <font>
+                                          <Font size="17.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                           </bottom>
+                           <top>
+                              <ListView fx:id="Agores2" prefHeight="200.0" prefWidth="200.0" stylesheets="@Scene3.css" BorderPane.alignment="CENTER" />
+                           </top>
+                        </BorderPane>
+                     </content>
+                  </TitledPane>
+               </center>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" left="50.0" right="50.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </right>
+         <padding>
+            <Insets left="250.0" right="250.0" />
+         </padding>
+         <bottom>
+            <Label fx:id="Winner" alignment="TOP_CENTER" contentDisplay="CENTER" maxWidth="1.7976931348623157E308" minWidth="678.0" prefHeight="63.0" prefWidth="878.0" styleClass="winner-message" stylesheets="@Scene3.css" text="Νικητής είναι ο : Γιώργος με συνολικη αξία περιουσιας: 3500" textFill="#00ff09" BorderPane.alignment="CENTER">
+               <font>
+                  <Font size="25.0" />
+               </font>
+               <BorderPane.margin>
+                  <Insets bottom="50.0" />
+               </BorderPane.margin>
+            </Label>
+         </bottom>
+         <center>
+            <ImageView blendMode="MULTIPLY" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+               <image>
+                  <Image url="@../../../monopoly-man.jpg" />
+               </image>
+               <BorderPane.margin>
+                  <Insets top="-40.0" />
+               </BorderPane.margin>
+            </ImageView>
+         </center>
+      </BorderPane>
+      <Button fx:id="QuitGame" alignment="CENTER" contentDisplay="CENTER" layoutY="50.0" mnemonicParsing="false" onAction="#Exit" prefHeight="50.0" prefWidth="200.0" styleClass="exit-button" stylesheets="@Scene3.css" text="Έξοδος" textAlignment="CENTER" textFill="#00ff09">
+         <VBox.margin>
+            <Insets bottom="50.0" top="-75.0" />
+         </VBox.margin>
+         <font>
+            <Font size="16.0" />
+         </font>
+         <effect>
+            <Glow level="1.0" />
+         </effect>
+      </Button>
+   </children>
+   <styleClass>
+      <String fx:value="root" />
+      <String fx:value="layout" />
+   </styleClass>
+</VBox>

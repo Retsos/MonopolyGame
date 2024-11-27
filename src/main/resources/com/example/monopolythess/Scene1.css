@@ -1,0 +1,115 @@
+/* ----- Κύριο Background ----- */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #FDF6E3, #FFFFFF); /* Gradient από μπεζ σε λευκό */
+    -fx-padding: 20px;
+}
+
+/* ----- Τίτλος ----- */
+.title {
+    -fx-font-family: "Arial";
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+
+.player-tags{
+    -fx-font-family: "Arial";
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #94C380; /* Απαλό πράσινο */
+    -fx-alignment: center;
+    -fx-padding: 10px;
+}
+/* ----- Περιοχές Παικτών ----- */
+.player-box {
+    -fx-background-color: #EAF7DF; /* Απαλό πράσινο */
+    -fx-border-color: #B5CDA3; /* Σκούρο πράσινο */
+    -fx-border-radius: 10px;
+    -fx-border-width: 2px;
+    -fx-padding: 20px;
+    -fx-background-radius: 10;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-text-fill: black;
+    -fx-spacing: 10px;
+}
+
+/* ----- Πεδία Κειμένου ----- */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #B5CDA3;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-padding: 10px;
+    -fx-background-radius: 10;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+
+/* ----- Dropdown (Avatar Επιλογές) ----- */
+.combo-box {
+    -fx-background-color: white;
+    -fx-border-color: #B5CDA3;
+    -fx-border-radius: 5px;
+    -fx-border-width: 1px;
+    -fx-padding: 5px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+}
+
+/* ----- Κουμπί "Ξεκινάμε" ----- */
+.start-button {
+    -fx-background-color: #DFF2BF; /* Απαλό πράσινο */
+    -fx-text-fill: black;
+    -fx-border-color: #A2C380;
+    -fx-border-radius: 15px;
+    -fx-background-radius: 15px;
+    -fx-padding: 10px;
+    -fx-font-family: "Arial";
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.2), 5, 0.0, 0, 2);
+}
+
+/* Hover Effect */
+.start-button:hover {
+    -fx-background-color: #CDE3AB; /* Λίγο πιο σκούρο πράσινο */
+}
+
+/* Pressed Effect */
+.start-button:pressed {
+    -fx-background-color: #BBD48A;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 7, 0.0, 0, 3);
+}
+
+/* ----- Συνολικό Layout ----- */
+.layout {
+    -fx-alignment: center;
+    -fx-spacing: 20px;
+}
+.button-back {
+    -fx-background-color: linear-gradient(#ff5400, #be1d00); /* Χρώμα κουμπιού */
+    -fx-text-fill: white; /* Χρώμα κειμένου */
+    -fx-font-family: "Arial"; /* Γραμματοσειρά */
+    -fx-font-size: 16px; /* Μέγεθος γραμματοσειράς */
+    -fx-padding: 10 20; /* Padding */
+    -fx-border-color: #ffa07a; /* Χρώμα περιγράμματος */
+    -fx-border-width: 2px; /* Πάχος περιγράμματος */
+    -fx-border-radius: 5px; /* Στρογγυλοποίηση περιγράμματος */
+    -fx-background-radius: 5px; /* Στρογγυλοποίηση κουμπιού */
+    -fx-cursor: hand; /* Αλλαγή του δείκτη όταν περνάει από πάνω */
+}
+
+.button-back:hover {
+    -fx-background-color: linear-gradient(#be1d00, #ff5400); /* Εφέ hover */
+    -fx-border-color: white; /* Αλλαγή χρώματος περιγράμματος */
+}
+
+.button-back:pressed {
+    -fx-background-color: linear-gradient(#d62828, #7d1d1d); /* Εφέ όταν πατιέται */
+    -fx-border-color: #ff7f50; /* Χρώμα περιγράμματος όταν πατιέται */
+}
