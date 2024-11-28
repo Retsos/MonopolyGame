@@ -5,7 +5,7 @@ This is an implementation of a board game inspired by the classic Monopoly, desi
 For questions, comments, or suggestions for improvement, you can contact us via email at: gretsilas@gmail.com.
 
 
-Disclaimer About Images and Intellectual Property
+Disclaimer About Images and Intellectual Property!!!
 
 This application was developed as part of the coursework for the "Human-Machine Interaction" course during the 5th semester of the School of Computer Engineering and Electronic Systems at the Hellenic University.
 
