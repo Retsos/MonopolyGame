@@ -1,0 +1,22 @@
+/* Custom style για το alert */
+.custom-alert {
+    -fx-background-color: #ffffff; /* Λευκό background */
+    -fx-padding: 10px;            /* Εσωτερικά περιθώρια */
+    -fx-font-family: "SansSerif";     /* Προσαρμοσμένη γραμματοσειρά */
+    -fx-font-size: 14px;          /* Μέγεθος γραμματοσειράς */
+}
+
+/* Style για το κουμπί */
+.button {
+    -fx-background-color: #3498db; /* Μπλε κουμπί */
+    -fx-text-fill: white;          /* Λευκό κείμενο */
+    -fx-font-weight: bold;
+    -fx-pref-width: 100px;         /* Καθορισμένο πλάτος */
+    -fx-cursor: hand;              /* Χεράκι όταν περνά ο δείκτης */
+    -fx-border-radius: 5px;
+}
+
+/* Μετατόπιση του κουμπιού πιο αριστερά */
+.button-bar {
+    -fx-padding: 5 110px 0 30px; /* Αριστερό padding μεγαλύτερο */
+}

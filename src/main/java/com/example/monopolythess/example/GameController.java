@@ -182,21 +182,13 @@ public class GameController {
                     e.printStackTrace();
                 } catch (Exception e) {
                     Platform.runLater(() -> {
-                        Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Σφάλμα");
-                        alert.setHeaderText("Αδυναμία εκτέλεσης ζαριών");
-                        alert.setContentText("Υπήρξε ένα σφάλμα κατά τη διαδικασία. Παρακαλώ δοκιμάστε ξανά.");
-                        alert.showAndWait();
+                        showCustomAlert("Monopoly","Αδυναμία εκτέλεσης ζαριών","Υπήρξε ένα σφάλμα κατά τη διαδικασία. Παρακαλώ δοκιμάστε ξανά!","monopoly-man.jpg");
                     });
                 }
             });
             thread.start();
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Δεν έχεις τελειώσει τον γύρο σου");
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Δεν έχεις τελειώσει τον γύρο σου!","monopoly-man.jpg");
         }
     }
     private String getDiceImagePath(int diceNumber) {
@@ -344,28 +336,16 @@ public class GameController {
                             if (isCompleteSet) {
                                 HandleBuyHouse(player1, selectedCardName, event);
                             } else {
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Αγορά Σπιτιού");
-                                alert.setHeaderText("Αποτυχία Αγοράς");
-                                alert.setContentText("Πρέπει πρώτα να ολοκληρώσεις το χρωματικό σετ για να αγοράσεις σπίτι!");
-                                alert.showAndWait();
+                                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Πρέπει πρώτα να ολοκληρώσεις το χρωματικό σετ για να αγοράσεις σπίτι!","monopoly-man.jpg");
                             }
                         }
                         case null, default -> {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Αγορά Σπιτιού");
-                            alert.setHeaderText("Αποτυχία Αγοράς");
-                            alert.setContentText("Δεν μπορείς να αγοράσεις σπίτι σε αυτήν την περιοχή");
-                            alert.showAndWait();
+                            showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν μπορείς να αγοράσεις σπίτι σε αυτήν την περιοχή","monopoly-man.jpg");
                         }
                     }
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να αγοράσεις σπίτι.");
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Λάθος Ενέργεια","Δεν είναι η σειρά σου για να αγοράσεις σπίτι!","monopoly-man.jpg");
             }
         });
         BuyHouse2.setOnAction(event -> {
@@ -381,29 +361,16 @@ public class GameController {
                                 // Προχωράει στην αγορά σπιτιού αν το σετ είναι ολοκληρωμένο
                                 HandleBuyHouse(player2, selectedCardName, event);
                             } else {
-                                // Εμφανίζει μήνυμα ότι πρέπει πρώτα να ολοκληρωθεί το σετ
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Αγορά Σπιτιού");
-                                alert.setHeaderText("Αποτυχία Αγοράς");
-                                alert.setContentText("Πρέπει πρώτα να ολοκληρώσεις το χρωματικό σετ για να αγοράσεις σπίτι!");
-                                alert.showAndWait();
+                                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Πρέπει πρώτα να ολοκληρώσεις το χρωματικό σετ για να αγοράσεις σπίτι!","monopoly-man.jpg");
                             }
                         }
                         case null, default -> {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Αγορά Σπιτιού");
-                            alert.setHeaderText("Αποτυχία Αγοράς");
-                            alert.setContentText("Δεν μπορείς να αγοράσεις σπίτι σε αυτήν την περιοχή");
-                            alert.showAndWait();
+                            showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν μπορείς να αγοράσεις σπίτι σε αυτήν την περιοχή!","monopoly-man.jpg");
                         }
                     }
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να αγοράσεις σπίτι.");
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να αγοράσεις σπίτι!","monopoly-man.jpg");
             }
         });
         BuyHotel1.setOnAction(event -> {
@@ -416,34 +383,16 @@ public class GameController {
                             if (odos.getSpitia() == 4) {
                                 HandleBuyHotel(player1, selectedCardName, event);
                             } else {
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Αγορά Ξενοδοχείου");
-                                alert.setHeaderText("Αποτυχία Αγοράς");
-                                alert.setContentText("Πρέπει πρώτα να αγοράσεις 4 σπίτια για να αγοράσεις ξενοδοχείο!");
-                                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                alert.showAndWait();
+                                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Πρέπει πρώτα να αγοράσεις 4 σπίτια για να αγοράσεις ξενοδοχείο!","monopoly-man.jpg");
                             }
                         }
                         case null, default -> {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Αγορά Ξενοδοχείου");
-                            alert.setHeaderText("Αποτυχία Αγοράς");
-                            alert.setContentText("Δεν μπορείς να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή");
-                            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                            stage.getIcons().add(new Image("monopoly-man.jpg"));
-                            alert.showAndWait();
+                            showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν μπορείς να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή!","monopoly-man.jpg");
                         }
                     }
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να αγοράσεις Ξενοδοχείο.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να αγοράσεις Ξενοδοχείο!","monopoly-man.jpg");
             }
         });
         BuyHotel2.setOnAction(event -> {
@@ -456,34 +405,16 @@ public class GameController {
                             if (odos.getSpitia() == 4) {
                                 HandleBuyHotel(player2, selectedCardName, event);
                             } else {
-                                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                alert.setTitle("Αγορά Ξενοδοχείου");
-                                alert.setHeaderText("Αποτυχία Αγοράς");
-                                alert.setContentText("Πρέπει πρώτα να αγοράσεις 4 σπίτια για να αγοράσεις ξενοδοχείο!");
-                                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                alert.showAndWait();
+                                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Πρέπει πρώτα να αγοράσεις 4 σπίτια για να αγοράσεις ξενοδοχείο!","monopoly-man.jpg");
                             }
                         }
                         case null, default -> {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Αγορά Ξενοδοχείου");
-                            alert.setHeaderText("Αποτυχία Αγοράς");
-                            alert.setContentText("Δεν μπορείς να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή");
-                            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                            stage.getIcons().add(new Image("monopoly-man.jpg"));
-                            alert.showAndWait();
+                            showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν μπορείς να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή!","monopoly-man.jpg");
                         }
                     }
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να αγοράσεις Ξενοδοχείο.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να αγοράσεις Ξενοδοχείο!","monopoly-man.jpg");
             }
         });
 
@@ -491,26 +422,14 @@ public class GameController {
             if (turn == 1) {
                 SellPrisonCard(player1, event);
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να πουλήσεις την κάρτα.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να πουλήσεις την κάρτα!","monopoly-man.jpg");
             }
         });
         SellCard2.setOnAction(event -> {
             if (turn == 2) {
                 SellPrisonCard(player2, event);
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να πουλήσεις την κάρτα.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να πουλήσεις την κάρτα!","monopoly-man.jpg");
             }
         });
         SellRegion1.setOnAction(event -> {
@@ -519,13 +438,7 @@ public class GameController {
                 Cards selectedCard = getCardByName(selectedCardName, player1);
                 SellRegionCard(player1, selectedCard, event);
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να πουλήσεις την κάρτα.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να πουλήσεις την κάρτα!","monopoly-man.jpg");
             }
         });
         SellRegion2.setOnAction(event -> {
@@ -534,13 +447,7 @@ public class GameController {
                 Cards selectedCard = getCardByName(selectedCardName, player2);
                 SellRegionCard(player2, selectedCard, event);
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Λάθος Ενέργεια");
-                alert.setContentText("Δεν είναι η σειρά σου για να πουλήσεις την κάρτα.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτυχία Αγοράς","Δεν είναι η σειρά σου για να πουλήσεις την κάρτα!","monopoly-man.jpg");
             }
         });
 
@@ -582,13 +489,7 @@ public class GameController {
                     return card;
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Δεν έχεις επιλέξει κάποια περιοχή.");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Δεν έχεις επιλέξει κάποια περιοχή!","monopoly-man.jpg");
             return null;
         }
         return null;
@@ -597,17 +498,7 @@ public class GameController {
         Apofasi decision1 = new Apofasi("Πήγαινε στην Εκκίνηση", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στην ΕκκίνησηΠαίρνεις 200€ ");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε στην Εκκίνηση. Παίρνεις 200€!","monopoly-man.jpg");
 
                 player.setCurrentPos(39);
                 MovePlayer(player, 1);
@@ -617,17 +508,7 @@ public class GameController {
         Apofasi decision2 = new Apofasi("Ασφάλεια ζωής", "Apofasi",true) {
             @Override
             public void DoTax(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Ασφάλεια ζωής. Πλήρωσε 100€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Ασφάλεια ζωής. Πλήρωσε 100€!","monopoly-man.jpg");
 
                 posoProsPlirwmi=100;
                 NotBasicVisibility();
@@ -638,18 +519,7 @@ public class GameController {
             public void DoTax(Player player) {
                 Player nextPlayer = (turn == 2) ? player1 : player2;
                 int Synolo = (player.getSynoloSpitiwn() * 20 + player.getSynoloJenodoxeiwn() * 50 )+(nextPlayer.getSynoloSpitiwn() * 20 + nextPlayer.getSynoloJenodoxeiwn() * 50);
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Φορολογία για την ανακατασκευή των οδών. Πλήρωσε 20€ για κάθε σπίτι και 50€ για κάθε ξενοδοχείο. Σύνολο: " + Synolo);
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Φορολογία για την ανακατασκευή των οδών. Πλήρωσε 20€ για κάθε σπίτι και 50€ για κάθε ξενοδοχείο. Σύνολο: " + Synolo,"monopoly-man.jpg");
 
                 posoProsPlirwmi=Synolo;
                 NotBasicVisibility();
@@ -658,18 +528,7 @@ public class GameController {
         Apofasi decision4 = new Apofasi("Ασφάλεια ζωής", "Apofasi",true) {
             @Override
             public void DoTax(Player player) {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Ασφάλεια ζωής. Πλήρωσε 100€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Ασφάλεια ζωής. Πλήρωσε 100€","monopoly-man.jpg");
 
                 // Κλήση της processPayment με το ποσό πληρωμής
                 posoProsPlirwmi=150;
@@ -679,17 +538,7 @@ public class GameController {
         Apofasi decision5 = new Apofasi("Κληρονομείς 500€", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Κληρονομείς 500€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Κληρονομείς 500€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 500);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -699,17 +548,7 @@ public class GameController {
         Apofasi decision6 = new Apofasi("Κέρδισες το 2ο βραβείο ομορφιάς. Παίρνεις 250€", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Κέρδισες το 2ο βραβείο ομορφιάς. Παίρνεις 250€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Κέρδισες το 2ο βραβείο ομορφιάς. Παίρνεις 250€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 250);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -719,17 +558,7 @@ public class GameController {
         Apofasi decision7 = new Apofasi("Πάρε για τις υπηρεσίες που προσέφερες 100€", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πάρε για τις υπηρεσίες που προσέφερες 100");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πάρε για τις υπηρεσίες που προσέφερες 100€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 100);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -739,17 +568,7 @@ public class GameController {
         Apofasi decision8 = new Apofasi("Τραπεζικό λάθος υπέρ σου. Πάρε 200€ ", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Τραπεζικό λάθος υπέρ σου. Πάρε 200€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Τραπεζικό λάθος υπέρ σου. Πάρε 200€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 200);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -759,17 +578,7 @@ public class GameController {
         Apofasi decision9 = new Apofasi("Βγες δωρεάν έξω από τη φυλακή ", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Βγες δωρεάν έξω από τη φυλακή");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Βγες δωρεάν έξω από τη φυλακή","monopoly-man.jpg");
 
                 if (player == player1) {
                     CheckPrison1.setSelected(true);
@@ -781,18 +590,7 @@ public class GameController {
         Apofasi decision10 = new Apofasi("Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€ ", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€","monopoly-man.jpg");
 
                 player.setCurrentPos(10);
                 player.getStack().setLayoutY(Board[10].getY());
@@ -804,18 +602,7 @@ public class GameController {
         Apofasi decision11 = new Apofasi("Επιστροφή φόρου εισοδήματος. Παίρνεις 100€", "Apofasi",false) {
             @Override
             public boolean Do(Player player) {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Επιστροφή φόρου εισοδήματος. Παίρνεις 100€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Επιστροφή φόρου εισοδήματος. Παίρνεις 100€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 100);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -825,18 +612,7 @@ public class GameController {
         Apofasi decision12 = new Apofasi(" Πλήρωσε για νοσοκομειακή περίθαλψη 100€", "Apofasi",true) {
             @Override
             public void DoTax(Player player) {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πλήρωσε για νοσοκομειακή περίθαλψη 100€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πλήρωσε για νοσοκομειακή περίθαλψη 100€","monopoly-man.jpg");
 
                 // Κλήση της processPayment με το ποσό πληρωμής
                 posoProsPlirwmi=100;
@@ -846,19 +622,7 @@ public class GameController {
         Apofasi decision13 = new Apofasi("Σε έπιασαν για φοροδιαφυγή! Πλήρωσε έξτρα 50€", "Apofasi",true) {
             @Override
             public void DoTax(Player player) {
-
-                // Εμφάνιση μηνύματος για την κάρτα
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Απόφασης");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Σε έπιασαν για φοροδιαφυγή! Πλήρωσε έξτρα 50€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Σε έπιασαν για φοροδιαφυγή! Πλήρωσε έξτρα 50€","monopoly-man.jpg");
 
                 posoProsPlirwmi=50;
                 NotBasicVisibility();
@@ -882,17 +646,7 @@ public class GameController {
         Entoli entoli1 = new Entoli("Πήγαινε στην εκκίνηση Παίρνεις 200€", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στην εκκίνηση Παίρνεις 200€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε στην εκκίνηση Παίρνεις 200€!","monopoly-man.jpg");
 
                 player.setCurrentPos(39);
                 MovePlayer(player, 1);
@@ -902,17 +656,7 @@ public class GameController {
         Entoli entoli2 = new Entoli("Πήγαινε στο σταθμό Μετρό", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στο σταθμό του Μετρό");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε στο σταθμό του Μετρό!","monopoly-man.jpg");
 
                 player.setCurrentPos(39);
                 MovePlayer(player, 26);
@@ -923,18 +667,8 @@ public class GameController {
         Entoli entoli3 = new Entoli("Πήγαινε στον κοντινότερο σιδηροδρομικό σταθμό και πλήρωσε στον ιδιοκτήτη του δυο φορές το ενοίκιο που δικαιούται. Αν ο σταθμός δεν έχει πουληθεί μπορείς να τον αγοράσεις από την τράπεζα", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στον κοντινότερο σιδηροδρομικό σταθμό και πλήρωσε στον ιδιοκτήτη του δυο φορές το ενοίκιο που δικαιούται. Αν ο σταθμός δεν έχει πουληθεί μπορείς να τον αγοράσεις από την τράπεζα.");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","\"Πήγαινε στον κοντινότερο σιδηροδρομικό σταθμό και πλήρωσε στον ιδιοκτήτη του\" +\n" +
+                        "\" δυο φορές το ενοίκιο που δικαιούται. Αν ο σταθμός δεν έχει πουληθεί μπορείς να τον αγοράσεις από την τράπεζα.!","monopoly-man.jpg");
 
                 int[] stationPositions = {5, 15, 25, 35};
                 int currentPosition = player.getCurrentPos();
@@ -967,18 +701,7 @@ public class GameController {
         Entoli entoli4 = new Entoli("Πήγαινε πίσω 3 τετράγωνα ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε πίσω 3 τετράγωνα");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
-
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε πίσω 3 τετράγωνα!","monopoly-man.jpg");
                 int sum = player.getCurrentPos() - 3;
                 player.setCurrentPos(0);
                 MovePlayer(player, sum);
@@ -988,17 +711,7 @@ public class GameController {
         Entoli entoli5 = new Entoli("Έχεις εκλεγεί πρόεδρος του παιχνιδιού. Πλήρωσε τον αντίπαλο παίκτη 50€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Έχεις εκλεγεί πρόεδρος του παιχνιδιού. Πλήρωσε τον αντίπαλο παίκτη 50€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Έχεις εκλεγεί πρόεδρος του παιχνιδιού. Πλήρωσε τον αντίπαλο παίκτη 50€!","monopoly-man.jpg");
 
                 Player nextPlayer = (turn == 2) ? player1 : player2;
 
@@ -1017,17 +730,7 @@ public class GameController {
         Entoli entoli6 = new Entoli("Πάρε επίδομα ανεργίας 100€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πάρε επίδομα ανεργίας 100€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πάρε επίδομα ανεργίας 100€!","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 100);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -1037,17 +740,7 @@ public class GameController {
         Entoli entoli7 = new Entoli("Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε κατευθείαν στη φυλακή. Δεν παίρνεις 200€!","monopoly-man.jpg");
 
                 player.setCurrentPos(10);
                 player.getStack().setLayoutY(Board[10].getY());
@@ -1059,17 +752,7 @@ public class GameController {
         Entoli entoli8 = new Entoli("Βγες δωρεάν από τη φυλακή", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Βγες δωρεάν από τη φυλακή");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Βγες δωρεάν από τη φυλακή!","monopoly-man.jpg");
 
                 if (player == player1) {
                     CheckPrison1.setSelected(true);
@@ -1080,17 +763,7 @@ public class GameController {
         Entoli entoli9 = new Entoli("Πήγαινε μπροστά 2 τετράγωνα", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε μπροστά 2 τετράγωνα");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε μπροστά 2 τετράγωνα!","monopoly-man.jpg");
 
                 int sum = player.getCurrentPos() + 2;
                 player.setCurrentPos(0);
@@ -1101,17 +774,7 @@ public class GameController {
         Entoli entoli10 = new Entoli("Πήγαινε στη Θέρμη (Αν περνάς από την εκκίνηση πάρε 200€) ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στη Θέρμη (Αν περνάς από την εκκίνηση πάρε 200€)");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε στη Θέρμη (Αν περνάς από την εκκίνηση πάρε 200€)!","monopoly-man.jpg");
 
                 player.setCurrentPos(39);
                 MovePlayer(player, 38);
@@ -1121,17 +784,7 @@ public class GameController {
         Entoli entoli11 = new Entoli("Πήγαινε στο σταθμό του ΟΑΣΘ (Αν περνάς από την εκκίνηση πάρε 200€)\" ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πήγαινε στο σταθμό του ΟΑΣΘ (Αν περνάς από την εκκίνηση πάρε 200€)");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πήγαινε στο σταθμό του ΟΑΣΘ (Αν περνάς από την εκκίνηση πάρε 200€)","monopoly-man.jpg");
 
                 if (player.getCurrentPos() > 5) {
                     player.setMoney(player.getMoney() + 200);
@@ -1145,17 +798,7 @@ public class GameController {
         Entoli entoli12 = new Entoli("Το δάνειο σου ωριμάζει παίρνεις 150€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Το δάνειο σου ωριμάζει παίρνεις 150€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Το δάνειο σου ωριμάζει παίρνεις 150€)","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 150);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -1165,17 +808,7 @@ public class GameController {
         Entoli entoli13 = new Entoli("Πάρε Χριστουγεννιάτικο δώρο 300€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Κάρτα Εντολής");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-
-                Text content = new Text("Πάρε Χριστουγεννιάτικο δώρο 300€");
-                content.setTextAlignment(TextAlignment.CENTER);
-                content.setWrappingWidth(400);
-                alert.getDialogPane().setContent(content);
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Πάρε Χριστουγεννιάτικο δώρο 300€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 300);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -1495,14 +1128,7 @@ public class GameController {
                         NoBuy.setDisable(true);
                         YesBuy.setDisable(true);
 
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Monopoly");
-                        alert.setHeaderText("Σε έπιασε η αστυνομία");
-                        alert.setContentText("Πήγαινε κατευθείαν στη φυλακή");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
-
+                        showCustomAlert("Monopoly","Σε έπιασε η αστυνομία!","Πήγαινε κατευθείαν στη φυλακή!","monopoly-man.jpg");
                         currentPlayer.setPrison(true);
                         currentPlayer.setDiplesZaries(0);
                         currentPlayer.setCurrentPos(10);
@@ -1636,18 +1262,7 @@ public class GameController {
             newPos = newPos % 40;
             player.setMoney(player.getMoney() + 200);  // Αν ο παίκτης πέρασε από την αφετηρία, παιρνει € 200
             player.getShowmoney().setText("Χρήματα: " + player.getMoney());
-
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Ενέργεια");
-
-            Text content = new Text("Πέρασες από την εκκίνηση και παίρνεις 200€");
-            content.setTextAlignment(TextAlignment.CENTER);
-            content.setWrappingWidth(400);
-            alert.getDialogPane().setContent(content);
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πέρασες από την εκκίνηση και παίρνεις 200€!","monopoly-man.jpg");
         }
         player.setCurrentPos(newPos);
         Player nextPlayer = (turn == 2) ? player1 : player2;
@@ -1725,12 +1340,8 @@ public class GameController {
         }
 
         if (doubles) {
-            Alert alert2 = new Alert(Alert.AlertType.CONFIRMATION);
-            alert2.setTitle("Monopoly");
-            alert2.setHeaderText("Έφερες διπλή ζαριά και βγήκες από την φυλακή!");
-            Stage stage = (Stage) alert2.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert2.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Έφερες διπλή ζαριά και βγήκες από την φυλακή!","monopoly-man.jpg");
+
             player.setPrison(false);
             player.setCurrentPos(10);
             player.setRounds(0);
@@ -1762,15 +1373,8 @@ public class GameController {
                         MovePlayer(player, dice1Number + dice2Number);
                     } else {
                         // Ενημέρωση ότι ο παίκτης δεν έχει αρκετά χρήματα
-                        Alert noMoneyAlert = new Alert(Alert.AlertType.ERROR);
-                        noMoneyAlert.setTitle("Monopoly");
-                        noMoneyAlert.setHeaderText("Δεν έχεις αρκετά χρήματα!");
-                        noMoneyAlert.setContentText("Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση.");
-                        Stage stage2 = (Stage) noMoneyAlert.getDialogPane().getScene().getWindow();
-                        stage2.getIcons().add(new Image("monopoly-man.jpg"));
-                        noMoneyAlert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση!","monopoly-man.jpg");
                         player.setRounds(player.getRounds() + 1);
-
                     }
                 } else {
                     player.setRounds(player.getRounds() + 1);
@@ -1801,15 +1405,8 @@ public class GameController {
                         MovePlayer(player, dice1Number + dice2Number);
                     } else {
                         // Ενημέρωση ότι ο παίκτης δεν έχει αρκετά χρήματα
-                        Alert noMoneyAlert = new Alert(Alert.AlertType.ERROR);
-                        noMoneyAlert.setTitle("Monopoly");
-                        noMoneyAlert.setHeaderText("Δεν έχεις αρκετά χρήματα!");
-                        noMoneyAlert.setContentText("Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση.");
-                        Stage stage2 = (Stage) noMoneyAlert.getDialogPane().getScene().getWindow();
-                        stage2.getIcons().add(new Image("monopoly-man.jpg"));
-                        noMoneyAlert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση!","monopoly-man.jpg");
                         player.setRounds(player.getRounds() + 1);
-
                     }
                 } else {
                     player.setRounds(player.getRounds() + 1);
@@ -1840,29 +1437,15 @@ public class GameController {
                         MovePlayer(player, dice1Number + dice2Number);
                     } else {
                         // Ενημέρωση ότι ο παίκτης δεν έχει αρκετά χρήματα
-                        Alert noMoneyAlert = new Alert(Alert.AlertType.ERROR);
-                        noMoneyAlert.setTitle("Monopoly");
-                        noMoneyAlert.setHeaderText("Δεν έχεις αρκετά χρήματα!");
-                        noMoneyAlert.setContentText("Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση.");
-                        Stage stage2 = (Stage) noMoneyAlert.getDialogPane().getScene().getWindow();
-                        stage2.getIcons().add(new Image("monopoly-man.jpg"));
-                        noMoneyAlert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Χρειάζεσαι 100€  για να πληρώσεις την εγγύηση!","monopoly-man.jpg");
                         player.setRounds(player.getRounds() + 1);
-
                     }
                 } else {
                     player.setRounds(player.getRounds() + 1);
                 }
             }
         } else if (player.isPrison()) {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Φυλακή");
-            alert.setHeaderText("Σε αυτόν τον γύρο βγαίνεις απο την φυλακή και πληρώνεις 100€ ");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
-
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Σε αυτόν τον γύρο βγαίνεις απο την φυλακή και πληρώνεις 100€","monopoly-man.jpg");
             player.setMoney(player.getMoney() - 100);
             player.setPrison(false);
             player.setRounds(0);
@@ -1885,13 +1468,7 @@ public class GameController {
                         if (Board[FindCurrentPos()] instanceof Odoi odos) {
                             if (!odos.isAgorasmeno()) {
                                 if (!Buy && !NotBuy) {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας!");
-                                    alert.setContentText("Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι!","monopoly-man.jpg");
                                 } else {
                                     endofround = true;
                                     YesBuy.setDisable(true);
@@ -1905,13 +1482,7 @@ public class GameController {
                                     NoBuy.setDisable(true);
                                     CheckForDoubles();
                                 } else {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                                    alert.setContentText("Πρέπει πρώτα να πληρώσεις το ενοίκιο!");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να πληρώσεις το ενοίκιο!","monopoly-man.jpg");
                                 }
                             }
                         }
@@ -1920,13 +1491,7 @@ public class GameController {
                         if (Board[FindCurrentPos()] instanceof Odoi odos) {
                             if (!odos.isAgorasmeno()) {
                                 if (!Buy && !NotBuy) {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας!");
-                                    alert.setContentText("Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι!","monopoly-man.jpg");
                                 } else {
                                     endofround = true;
                                     YesBuy.setDisable(true);
@@ -1940,13 +1505,7 @@ public class GameController {
                                     NoBuy.setDisable(true);
                                     CheckForDoubles();
                                 } else {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                                    alert.setContentText("Πρέπει πρώτα να πληρώσεις το ενοίκιο!");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να πληρώσεις το ενοίκιο!","monopoly-man.jpg");
                                 }
                             }
                         }
@@ -1955,13 +1514,7 @@ public class GameController {
                         if (Board[FindCurrentPos()] instanceof Odoi odos) {
                             if (!odos.isAgorasmeno()) {
                                 if (!Buy && !NotBuy) {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας!");
-                                    alert.setContentText("Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να επιλέξεις αν θα αγοράσεις ή όχι!","monopoly-man.jpg");
                                 } else {
                                     endofround = true;
                                     YesBuy.setDisable(true);
@@ -1975,13 +1528,7 @@ public class GameController {
                                     NoBuy.setDisable(true);
                                     CheckForDoubles();
                                 } else {
-                                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                                    alert.setTitle("Monopoly");
-                                    alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                                    alert.setContentText("Πρέπει πρώτα να πληρώσεις το ενοίκιο!");
-                                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                                    alert.showAndWait();
+                                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να πληρώσεις το ενοίκιο!","monopoly-man.jpg");
                                 }
                             }
                         }
@@ -1993,13 +1540,7 @@ public class GameController {
                             NoBuy.setDisable(true);
                             CheckForDoubles();
                         } else {
-                            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                            alert.setTitle("Monopoly");
-                            alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                            alert.setContentText("Πρέπει πρώτα να πληρώσεις τον φόρο!");
-                            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                            stage.getIcons().add(new Image("monopoly-man.jpg"));
-                            alert.showAndWait();
+                            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Πρέπει πρώτα να πληρώσεις τον φόρο!","monopoly-man.jpg");
                         }
                     }
                 }
@@ -2009,13 +1550,7 @@ public class GameController {
             }
         }
         else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Αποτέλεσμα Ενέργειας!");
-            alert.setContentText("Δεν μπορείς να τελειώσεις τον γύρο πριν παίξεις!");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας!","Δεν μπορείς να τελειώσεις τον γύρο πριν παίξεις!","monopoly-man.jpg");
         }
     }
     public void CheckForDoubles(){
@@ -2024,22 +1559,11 @@ public class GameController {
                 if (doubles && !player1.isPrison()) {
                     if (counter1doubles < 2) {
                         turn = 1; //DIATIRISI TIS SEIRAS
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Monopoly");
-                        alert.setHeaderText("Είσαι τυχερός!!");
-                        alert.setContentText("Έφερες διπλές ζαριές, και ξανά παίζεις");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+
+                        showCustomAlert("Monopoly","Είσαι τυχερός!!","Έφερες διπλές ζαριές, και ξανά παίζεις!","monopoly-man.jpg");
                         counter1doubles++;
                     } else {
-                        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                        alert2.setTitle("Monopoly");
-                        alert2.setHeaderText("Είσαι ασυνήθιστα τυχερός");
-                        alert2.setContentText("Πάνε αμέσως φυλακή για να ηρεμήσεις!");
-                        Stage stage = (Stage) alert2.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert2.showAndWait();
+                        showCustomAlert("Monopoly","Είσαι ασυνήθιστα τυχερός..","Πάνε αμέσως φυλακή για να ηρεμήσεις!","monopoly-man.jpg");
 
                         player1.setCurrentPos(10);
                         player1.getStack().setLayoutX(Board[10].getX());
@@ -2054,23 +1578,11 @@ public class GameController {
                 if (doubles && !player2.isPrison()) {
                     if (counter2doubles < 2) {
                         turn = 2; //DIATIRISI TIS SEIRAS
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Monopoly");
-                        alert.setHeaderText("Είσαι τυχερός!!");
-                        alert.setContentText("Έφερες διπλές ζαριές, και ξανά παίζεις");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+
+                        showCustomAlert("Monopoly","Είσαι τυχερός!!","Έφερες διπλές ζαριές, και ξανά παίζεις!","monopoly-man.jpg");
                         counter2doubles++;
                     } else {
-                        Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                        alert2.setTitle("Monopoly");
-                        alert2.setHeaderText("Είσαι ασυνήθιστα τυχερός");
-                        alert2.setContentText("Πάνε αμέσως φυλακή για να ηρεμήσεις!");
-                        Stage stage = (Stage) alert2.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert2.showAndWait();
-
+                        showCustomAlert("Monopoly","Είσαι ασυνήθιστα τυχερός..","Πάνε αμέσως φυλακή για να ηρεμήσεις!","monopoly-man.jpg");
                         player2.setCurrentPos(10);
                         player2.getStack().setLayoutX(Board[10].getX());
                         player2.getStack().setLayoutY(Board[10].getY());
@@ -2200,23 +1712,11 @@ public class GameController {
                         YesBuy.setDisable(true);
                         return true;
                     } else {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Πληρωμή Ενοικίου");
-                        alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                        alert.setContentText("Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!","monopoly-man.jpg");
                         return false;
                     }
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Monopoly");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Λάθος Ενέργεια");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Λάθος Ενέργεια","monopoly-man.jpg");
                     return false;
                 }
             }
@@ -2232,23 +1732,11 @@ public class GameController {
                         YesBuy.setDisable(true);
                         return true;
                     } else {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Πληρωμή Ενοικίου");
-                        alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                        alert.setContentText("Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!","monopoly-man.jpg");
                         return false;
                     }
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Monopoly");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Λάθος Ενέργεια");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Λάθος Ενέργεια","monopoly-man.jpg");
                     return false;
                 }
             }
@@ -2264,23 +1752,11 @@ public class GameController {
                         YesBuy.setDisable(true);
                         return true;
                     } else {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Πληρωμή Ενοικίου");
-                        alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                        alert.setContentText("Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+                        showCustomAlert("Monopoly","Πληρωμή Ενοικίου","Δεν έχεις αρκετά χρήματα για να πληρώσεις το Ενοίκιο!","monopoly-man.jpg");
                         return false;
                     }
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Monopoly");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Λάθος Ενέργεια");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Πληρωμή Ενοικίου","Λάθος Ενέργεια!","monopoly-man.jpg");
                     return false;
                 }
             }
@@ -2319,23 +1795,11 @@ public class GameController {
                     NoBuy.setDisable(true);
                     return true;
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Αγοραπωλησία");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Δεν έχεις αρκετά χρήματα για να αγοράσεις την περιοχή!");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις αρκετά χρήματα για να αγοράσεις την περιοχή!","monopoly-man.jpg");
                     return false;
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Αγοραπωλησία");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                alert.setContentText("Η περιοχή είναι ήδη αγορασμένη");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Η περιοχή είναι ήδη αγορασμένη!","monopoly-man.jpg");
                 return false;
             }
         } else
@@ -2386,13 +1850,7 @@ public class GameController {
         if (selectedCard instanceof Odoi odos) {
             BuyHouse(player, odos, event);
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Αγορά Σπιτιού");
-            alert.setHeaderText("Αποτέλεσμα Κάρτας");
-            alert.setContentText("Δεν έχεις επιλέξει κατάλληλη κάρτα για την αγορά σπιτιού.");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις επιλέξει κατάλληλη κάρτα για την αγορά σπιτιού!","monopoly-man.jpg");
         }
     }
     public void BuyHouse(Player player, Cards card, ActionEvent event) {
@@ -2410,22 +1868,10 @@ public class GameController {
                     }
 
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Αγορά Σπιτιού");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Δεν έχεις αρκετά χρήματα για να αγοράσεις σπίτι σε αυτήν την περιοχή!");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις αρκετά χρήματα για να αγοράσεις σπίτι σε αυτήν την περιοχή","monopoly-man.jpg");
                 }
             } else {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Αγορά Σπιτιού");
-                alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                alert.setContentText("Μπορείς να αγοράσεις μέχρι 4 σπίτια σε κάθε περιοχή!");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Μπορείς να αγοράσεις μέχρι 4 σπίτια σε κάθε περιοχή!","monopoly-man.jpg");
             }
 
         }
@@ -2462,13 +1908,7 @@ public class GameController {
         if (selectedCard instanceof Odoi odos) {
             BuyHotel(player, odos, event);
         } else {
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Αγορά Σπιτιού");
-            alert.setHeaderText("Αποτέλεσμα Κάρτας");
-            alert.setContentText("Δεν έχεις επιλέξει κατάλληλη κάρτα για την αγορά σπιτιού.");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις επιλέξει κατάλληλη κάρτα για την αγορά σπιτιού!","monopoly-man.jpg");
         }
     }
     public void BuyHotel(Player player, Cards card, ActionEvent event) {
@@ -2488,22 +1928,10 @@ public class GameController {
                             Houses1.setText("Ξενοδοχείο: Ναι");
                         }
                     } else {
-                        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                        alert.setTitle("Αγορά Ξενοδοχείου");
-                        alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                        alert.setContentText("Δεν έχεις αρκετά χρήματα για να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή!");
-                        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                        stage.getIcons().add(new Image("monopoly-man.jpg"));
-                        alert.showAndWait();
+                        showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις αρκετά χρήματα για να αγοράσεις Ξενοδοχείο σε αυτήν την περιοχή!","monopoly-man.jpg");
                     }
                 } else {
-                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                    alert.setTitle("Αγορά Σπιτιού");
-                    alert.setHeaderText("Αποτέλεσμα Κάρτας");
-                    alert.setContentText("Πρέπει πρώτα να αγοράσεις 4 σπίτια σε αυτήν την περιοχή!");
-                    Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                    stage.getIcons().add(new Image("monopoly-man.jpg"));
-                    alert.showAndWait();
+                    showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Πρέπει πρώτα να αγοράσεις 4 σπίτια σε αυτήν την περιοχή!","monopoly-man.jpg");
                 }
             }
         } else {
@@ -2557,21 +1985,9 @@ public class GameController {
                     }
                 }
             } else if (!CheckPrison1.isSelected()) {
-                Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
-                alert2.setTitle("Monopoly");
-                alert2.setHeaderText("Αποτέλεσμα Ενέργειας");
-                alert2.setContentText("Δεν έχεις κάρτα εξόδου από την φυλακή.");
-                Stage stage = (Stage) alert2.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert2.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις κάρτα εξόδου από την φυλακή.","monopoly-man.jpg");
             } else if (CheckPrison2.isSelected()) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                alert.setContentText("Ο αντίπαλος παίκτης έχει ήδη μια κάρτα εξόδου από την φυλακή");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Ο αντίπαλος παίκτης έχει ήδη μια κάρτα εξόδου από την φυλακή","monopoly-man.jpg");
             }
         } else {
             if (CheckPrison2.isSelected() && !CheckPrison1.isSelected()) {
@@ -2613,21 +2029,9 @@ public class GameController {
                     }
                 }
             } else if (!CheckPrison2.isSelected()) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                alert.setContentText("Δεν έχεις κάρτα εξόδου από την φυλακή.");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Δεν έχεις κάρτα εξόδου από την φυλακή.","monopoly-man.jpg");
             } else if (CheckPrison1.isSelected()) {
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Monopoly");
-                alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-                alert.setContentText("Ο αντίπαλος παίκτης έχει ήδη μια κάρτα εξόδου από την φυλακή");
-                Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-                stage.getIcons().add(new Image("monopoly-man.jpg"));
-                alert.showAndWait();
+                showCustomAlert("Monopoly","Αποτέλεσμα Ενέργειας","Ο αντίπαλος παίκτης έχει ήδη μια κάρτα εξόδου από την φυλακή","monopoly-man.jpg");
             }
         }
     }
@@ -2695,28 +2099,12 @@ public class GameController {
         }
     }
     public void CheckMoney(Player player) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Monopoly");
-
         if (player == player1 && !Agores1.getItems().isEmpty() || player != player1 && !Agores2.getItems().isEmpty()) {
-            alert.setHeaderText("Αποτέλεσμα Ενέργειας");
-            Text content = new Text("Πούλησε κάποια από τις περιοχές σου για να πάρεις περισσότερα χρήματα!");
-            content.setTextAlignment(TextAlignment.CENTER);
-            content.setWrappingWidth(400);
-            alert.getDialogPane().setContent(content);
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+
+            showCustomAlert("Monopoly",  "Αποτέλεσμα Ενέργειας",  "Πούλησε κάποια από τις περιοχές σου για να πάρεις περισσότερα χρήματα!",  "monopoly-man.jpg");
             PayRentBtn.setDisable(false);
         } else {
-            alert.setHeaderText("Το παιχνίδι τελείωσε!");
-            Text content = new Text("Η περιουσία που έχεις δεν φτάνει για να πληρώσεις. Το παιχνίδι τελείωσε!");
-            content.setTextAlignment(TextAlignment.CENTER);
-            content.setWrappingWidth(400);
-            alert.getDialogPane().setContent(content);
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly",  "Το παιχνίδι τελείωσε!",  "Η περιουσία που έχεις δεν φτάνει για να πληρώσεις. Το παιχνίδι τελείωσε!",  "monopoly-man.jpg");
             // Μετάβαση στη νέα σκηνή
             try {
                 GetNewScene();
@@ -2756,5 +2144,28 @@ public class GameController {
         }else{
             return processPayment(player, tax);
         }
+    }
+
+    private void showCustomAlert(String title, String header, String content, String iconPath) {
+        // Δημιουργία του alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);
+        alert.setHeaderText(header);
+
+        Text contenxt = new Text(content);
+        contenxt.setTextAlignment(TextAlignment.CENTER);
+        contenxt.setWrappingWidth(400);
+        alert.getDialogPane().setContent(contenxt);
+
+        // Ρυθμίσεις για το εικονίδιο
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(iconPath)); // Προσθήκη εικονιδίου
+
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/com/example/monopolythess/Alert.css").toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert"); // Εφαρμογή του custom class CSS
+
+        // Εμφάνιση του alert
+        alert.showAndWait();
     }
 }

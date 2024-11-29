@@ -129,37 +129,20 @@ public class SceneController {
         if (Field1.isEmpty() && !Field2.isEmpty()) {
             player1name.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
             player2name.setStyle("-fx-border-color: #00ff09; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Τo πεδίo για τo όνομα δεν μπορεί να είναι κενό");
 
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Τo πεδίo για τo όνομα δεν μπορεί να είναι κενό","monopoly-man.jpg");
             return false;
         } else if (!Field1.isEmpty() && Field2.isEmpty()) {
             player1name.setStyle("-fx-border-color: #00ff09; -fx-background-color: transparent; -fx-border-radius: 15px");
             player2name.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Τo πεδίo για τo όνομα δεν μπορεί να είναι κενό");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
 
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Τo πεδίo για τo όνομα δεν μπορεί να είναι κενό","monopoly-man.jpg");
             return false;
         } else if (Field1.isEmpty()) {
             player1name.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
             player2name.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Τα πεδία για τα ονόματα δεν μπορεί να είναι κενά");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Τα πεδία για τα ονόματα δεν μπορεί να είναι κενά","monopoly-man.jpg");
             return false;
         }
         else {
@@ -172,35 +155,20 @@ public class SceneController {
         if (avatar1==null && avatar2!=null) {
             ComboBox1.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
             ComboBox2.setStyle("-fx-border-color: #00ff09; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Πρέπει ο παίκτης να επιλέξει ένα Avatar");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Πρέπει ο παίκτης να επιλέξει ένα Avatar","monopoly-man.jpg");
             return false;
         } else if (avatar1!=null    && avatar2==null) {
             ComboBox1.setStyle("-fx-border-color: #00ff09; -fx-background-color: transparent; -fx-border-radius: 15px");
             ComboBox2.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Πρέπει ο παίκτης να επιλέξει ένα Avatar");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Πρέπει ο παίκτης να επιλέξει ένα Avatar","monopoly-man.jpg");
             return false;
         } else if (avatar1==null) {
             ComboBox1.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
             ComboBox2.setStyle("-fx-border-color: red; -fx-background-color: transparent; -fx-border-radius: 15px");
-            Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Monopoly");
-            alert.setHeaderText("Λάθος Ενέργεια");
-            alert.setContentText("Πρέπει οι παίκτες να επιλέξουν από ένα Avatar");
-            Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
-            stage.getIcons().add(new Image("monopoly-man.jpg"));
-            alert.showAndWait();
+
+            showCustomAlert("Monopoly","Λάθος Ενέργεια","Πρέπει ο παίκτης να επιλέξει ένα Avatar","monopoly-man.jpg");
             return false;
         }
         else {
@@ -217,4 +185,24 @@ public class SceneController {
         stage.show();
     }
 
+    private void showCustomAlert(String title, String header, String content, String iconPath) {
+        // Δημιουργία του alert
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle(title);           // Θέτουμε τον τίτλο
+        alert.setHeaderText(header);     // Θέτουμε το header
+        alert.setContentText(content);   // Θέτουμε το περιεχόμενο
+
+        // Ρυθμίσεις για το εικονίδιο
+        Stage stage = (Stage) alert.getDialogPane().getScene().getWindow();
+        stage.getIcons().add(new Image(iconPath)); // Προσθήκη εικονιδίου
+
+        // Φόρτωση custom CSS (αν υπάρχει)
+        DialogPane dialogPane = alert.getDialogPane();
+        dialogPane.getStylesheets().add(getClass().getResource("/com/example/monopolythess/Alert.css").toExternalForm());
+        dialogPane.getStyleClass().add("custom-alert"); // Εφαρμογή του custom CSS
+
+
+        // Εμφάνιση του alert
+        alert.showAndWait();
+    }
 }
