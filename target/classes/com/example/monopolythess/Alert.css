@@ -5,7 +5,6 @@
     -fx-font-family: "SansSerif";     /* Προσαρμοσμένη γραμματοσειρά */
     -fx-font-size: 14px;          /* Μέγεθος γραμματοσειράς */
 }
-
 /* Style για το κουμπί */
 .button {
     -fx-background-color: #3498db; /* Μπλε κουμπί */
@@ -15,8 +14,7 @@
     -fx-cursor: hand;              /* Χεράκι όταν περνά ο δείκτης */
     -fx-border-radius: 5px;
 }
-
 /* Μετατόπιση του κουμπιού πιο αριστερά */
 .button-bar {
-    -fx-padding: 5 110px 0 30px; /* Αριστερό padding μεγαλύτερο */
+    -fx-padding: 5 120px 0 30px; /* Αριστερό padding μεγαλύτερο */
 }
