@@ -798,7 +798,7 @@ public class GameController {
         Entoli entoli12 = new Entoli("Το δάνειο σου ωριμάζει παίρνεις 150€ ", "Εντολή") {
             @Override
             public boolean Do(Player player) {
-                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Το δάνειο σου ωριμάζει παίρνεις 150€)","monopoly-man.jpg");
+                showCustomAlert("Monopoly","Αποτέλεσμα Κάρτας","Το δάνειο σου ωριμάζει παίρνεις 150€","monopoly-man.jpg");
 
                 player.setMoney(player.getMoney() + 150);
                 player.getShowmoney().setText("Χρήματα: " + player.getMoney());
@@ -1569,6 +1569,7 @@ public class GameController {
                         player1.getStack().setLayoutX(Board[10].getX());
                         player1.getStack().setLayoutY(Board[10].getY());
                         player1.setPrison(true);
+                        turn = 2; //ALLAGI SEIRAS
                     }
                 } else {
                     turn = 2; //ALLAGI SEIRAS
@@ -1587,6 +1588,8 @@ public class GameController {
                         player2.getStack().setLayoutX(Board[10].getX());
                         player2.getStack().setLayoutY(Board[10].getY());
                         player2.setPrison(true);
+
+                        turn = 1; //ALLAGI SEIRAS
                     }
                 } else {
                     turn = 1; //ALLAGI SEIRAS
@@ -2145,7 +2148,6 @@ public class GameController {
             return processPayment(player, tax);
         }
     }
-
     private void showCustomAlert(String title, String header, String content, String iconPath) {
         // Δημιουργία του alert
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
