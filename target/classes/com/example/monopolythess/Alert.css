@@ -1,7 +1,7 @@
 /* Custom style για το alert */
 .custom-alert {
     -fx-background-color: #ffffff; /* Λευκό background */
-    -fx-padding: 10px;            /* Εσωτερικά περιθώρια */
+    -fx-padding: 10px 0px 10px 0px;            /* Εσωτερικά περιθώρια */
     -fx-font-family: "SansSerif";     /* Προσαρμοσμένη γραμματοσειρά */
     -fx-font-size: 14px;          /* Μέγεθος γραμματοσειράς */
 }
