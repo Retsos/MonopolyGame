@@ -448,7 +448,6 @@ public class GameController {
             }
             if (result){
                 ForosIsUp=false;
-                PayTax.setDisable(true);
                 BasicVisibility();
             }
         });
@@ -456,8 +455,8 @@ public class GameController {
     public  void BasicVisibility(){
         PayTax.setDisable(true);
         PayTax.setOpacity(0);
-        PayRentBtn.setOpacity(1);
         PayRentBtn.setDisable(true);
+        PayRentBtn.setOpacity(1);
     }
     public  void NotBasicVisibility(){
         PayTax.setDisable(false);
@@ -1434,11 +1433,12 @@ public class GameController {
             }
         } else if (player.isPrison()) {
             showCustomAlert("Αποτέλεσμα Ενέργειας!","Σε αυτόν τον γύρο βγαίνεις απο την φυλακή και πληρώνεις 100€");
-            player.setMoney(player.getMoney() - 100);
-            player.setPrison(false);
-            player.setRounds(0);
-            player.getShowmoney().setText("Χρήματα: " + player.getMoney());
-            MovePlayer(player, dice1Number + dice2Number);
+            boolean res = processPayment(player,100);
+            if (res){
+                player.setPrison(false);
+                player.setRounds(0);
+                MovePlayer(player, dice1Number + dice2Number);
+            }
         }
     }
     //Buttons no/endturn
@@ -1832,7 +1832,6 @@ public class GameController {
     }
     //HANDLE BUY HOUSES
     public void HandleBuyHouse(Player player, String selectedCardName, ActionEvent event) {
-
         Cards selectedCard = Arrays.stream(player.getCards())
                 .filter(card -> card.getCardName().equals(selectedCardName))
                 .findFirst()
@@ -2091,7 +2090,6 @@ public class GameController {
     }
     public void CheckMoney(Player player) {
         if (player == player1 && !Agores1.getItems().isEmpty() || player != player1 && !Agores2.getItems().isEmpty()) {
-
             showCustomAlert("Αποτέλεσμα Ενέργειας",  "Πούλησε κάποια από τις περιοχές σου για να πάρεις περισσότερα χρήματα!");
             PayRentBtn.setDisable(false);
         } else {
