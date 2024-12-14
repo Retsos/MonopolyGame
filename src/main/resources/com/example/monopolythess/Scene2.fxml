@@ -123,9 +123,9 @@
                      </font>
                   </Label>
                   <Label layoutX="397.0" layoutY="578.0" text="200$" />
-                  <StackPane fx:id="CarStack" layoutX="5.0" layoutY="450.0">
+                  <StackPane fx:id="CarStack" blendMode="MULTIPLY" layoutX="-8.0" layoutY="382.0">
                      <children>
-                        <ImageView blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="MULTIPLY" fitHeight="80.0" fitWidth="85.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Car.png" />
                            </image>
@@ -133,16 +133,16 @@
                      </children></StackPane>
                   <StackPane fx:id="HorseStack" layoutX="327.0" layoutY="424.0">
                      <children>
-                        <ImageView blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="MULTIPLY" fitHeight="75.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../horse.png" />
                            </image>
                         </ImageView>
                      </children>
                   </StackPane>
-                  <StackPane fx:id="AgkyraStack" layoutX="392.0" layoutY="585.0">
+                  <StackPane fx:id="AgkyraStack" layoutX="258.0" layoutY="576.0">
                      <children>
-                        <ImageView blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView blendMode="MULTIPLY" fitHeight="75.0" fitWidth="80.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Agkyra.png" />
                            </image>
@@ -150,7 +150,7 @@
                      </children></StackPane>
                   <StackPane fx:id="HatStack" layoutX="244.0" layoutY="240.0" minHeight="40.0" minWidth="40.0">
                      <children>
-                        <ImageView blendMode="MULTIPLY" fitHeight="40.0" fitWidth="50.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
+                        <ImageView blendMode="MULTIPLY" fitHeight="50.0" fitWidth="60.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>
                               <Image url="@../../../hat.png" />
                            </image>
@@ -256,17 +256,17 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <ImageView fx:id="Car1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="40.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Car1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="70.0" layoutX="-21.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Car.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Anchor1" blendMode="MULTIPLY" fitHeight="35.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Anchor1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-8.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Agkyra.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Hat1" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="35.0" layoutY="5.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
+                        <ImageView fx:id="Hat1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-11.0" layoutY="-8.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>
                               <Image url="@../../../hat.png" />
                            </image>
@@ -274,7 +274,7 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </ImageView>
-                        <ImageView fx:id="Horse1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Horse1" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-11.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../horse.png" />
                            </image>
@@ -372,7 +372,7 @@
                            <cursor>
                               <Cursor fx:constant="HAND" />
                            </cursor></Button>
-                        <ImageView fx:id="Hat2" blendMode="MULTIPLY" fitHeight="40.0" fitWidth="35.0" layoutX="1.0" layoutY="3.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
+                        <ImageView fx:id="Hat2" blendMode="MULTIPLY" fitHeight="45.0" fitWidth="45.0" layoutX="-5.0" layoutY="-6.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" smooth="false">
                            <image>
                               <Image url="@../../../hat.png" />
                            </image>
@@ -380,17 +380,17 @@
                               <Cursor fx:constant="DEFAULT" />
                            </cursor>
                         </ImageView>
-                        <ImageView fx:id="Car2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="35.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Car2" blendMode="MULTIPLY" fitHeight="60.0" fitWidth="70.0" layoutX="-17.0" layoutY="-10.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Car.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Anchor2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Anchor2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-4.0" layoutY="-11.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Agkyra.png" />
                            </image>
                         </ImageView>
-                        <ImageView fx:id="Horse2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="35.0" layoutX="1.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="Horse2" blendMode="MULTIPLY" fitHeight="50.0" fitWidth="50.0" layoutX="-7.0" layoutY="-5.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../horse.png" />
                            </image>
